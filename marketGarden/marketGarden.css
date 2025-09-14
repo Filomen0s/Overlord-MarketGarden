@@ -1,0 +1,212 @@
+body {
+  background-color: #272222;
+  margin: 0svb;
+  overflow: none;
+}
+
+.libre-franklin-uniquifier {
+  font-family: "Libre Franklin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.instrument-sans-uniquifier {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.voltar{
+  width: 3%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  margin-left: 3%;
+  transition: 0.3s;
+}
+
+.voltar:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.voltar:active{
+  transform: scale(1);
+}
+
+.capaMarketGarden {
+  background-image: url('../imagens/capaMarketGarden.png');
+  background-repeat: no-repeat;
+  background-position: -20%;
+  background-size: 100%;
+  width: 100%;
+  height: 700px;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  align-content: center;
+  border-bottom: solid 3px #ffca2b;
+}
+
+.capaMarketGarden div{
+  margin-bottom: 900%;
+}
+
+.market {
+  text-align: center;
+  font-size: 1000%;
+  color: #ffca2b;
+  font-weight: 900;
+  font-family: "Libre Franklin", sans-serif;
+  filter: drop-shadow(8px 5px 4px #c19c2b);
+}
+
+.garden {
+  text-align: center;
+  font-size: 800%;
+  color: #ffffff00;
+  font-weight: 900;
+  margin-top: -9%;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: #ffca2b;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+.contextoObjetivo {
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  padding-top: 10%;
+  padding-bottom: 5%;
+  font-size: 400%;
+  font-family: "Instrument Sans", sans-serif;
+  color: #FF0000;
+}
+
+.areaInfoUm {
+  display: flex;
+  background-color: #5E3737;
+  padding: 2.5%;
+  width: 85%;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: 3%;
+  border-radius: 30px;
+}
+
+.areaInfoUm p {
+  color: #fff;
+  font-size: 160%;
+  width: 60%;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+.areaInfoUm img {
+  width: 40%;
+  height: auto;
+}
+
+.areaInfoDois {
+  border: solid 10px #883B3B;
+  text-align: center;
+  width: 85%;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 30px;
+  margin-top: 8%;
+  padding: 3%;
+}
+
+.areaInfoDois h1 {
+  font-size: 400%;
+  font-family: "Instrument Sans", sans-serif;
+  color: #842525;
+  width: 50%;
+  margin: auto;
+  padding-bottom: 4%;
+}
+
+.areaInfoDois p {
+  color: #fff;
+  font-size: 160%;
+  width: 60%;
+  font-family: "Instrument Sans", sans-serif;
+  margin: auto;
+}
+
+.consImpac {
+  font-size: 400%;
+  width: 50%;
+  text-align: center;
+  font-family: "Instrument Sans", sans-serif;
+  justify-content: center;
+  margin: auto;
+  margin-top: 15%;
+  color: #FF0000;
+}
+
+.areaInfoTres {
+  display: flex;
+  width: 85%;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: 3%;
+  margin-top: 12%;
+  margin-bottom: 9%;
+}
+
+.areaInfoTres img {
+  width: 50%;
+  height: auto;
+  border-radius: 30px;
+}
+
+.areaInfoTres p {
+  color: #fff;
+  font-size: 140%;
+  font-family: "Instrument Sans", sans-serif;
+  text-align: right;
+}
+
+.areaImagens {
+  display: flex;
+  gap: 5%;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  margin-top: 15%;
+  margin-bottom: 5%;
+}
+
+.areaImagens img {
+  width: 40%;
+  height: auto;
+  border-radius: 30px;
+}
+
+.fontes {
+  display: flex;
+  padding-bottom: 2.5%;
+  gap: 1%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.fontes h1{
+  color: #fff;
+  font-size: 150%;
+  font-weight: 500;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+.fontes a {
+  color: #fff;
+}
