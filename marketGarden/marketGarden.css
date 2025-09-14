@@ -21,7 +21,6 @@ body {
 
 .voltar{
   width: 3%;
-  margin-bottom: 2%;
   margin-top: 2%;
   margin-left: 3%;
   transition: 0.3s;
@@ -42,7 +41,7 @@ body {
   background-position: -20%;
   background-size: 100%;
   width: 100%;
-  height: 700px;
+  height: auto;
   align-items: center;
   margin: auto;
   justify-content: center;
@@ -51,7 +50,11 @@ body {
 }
 
 .capaMarketGarden div{
-  margin-bottom: 900%;
+  padding-top: 2.7%;
+  padding-bottom: 2.7%;
+ width: fit-content;
+ height: fit-content;
+ margin: auto;
 }
 
 .market {
@@ -68,7 +71,7 @@ body {
   font-size: 800%;
   color: #ffffff00;
   font-weight: 900;
-  margin-top: -9%;
+  margin-top: -20%;
   -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: #ffca2b;
   font-family: "Libre Franklin", sans-serif;
