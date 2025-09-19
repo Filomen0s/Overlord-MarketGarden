@@ -1,9 +1,11 @@
 body {
   background-color: #272222;
   background-image: url('../imagens/backGroundHumanas.png');
-  background-size: 100%;
-  margin: 0svb;
-  overflow: none;
+  background-repeat: repeat-y;      /* repete só verticalmente */
+  background-size: 100% auto;       /* largura 100%, altura proporcional */
+  background-position: top center;  /* centralizado horizontalmente */
+  margin: 0;
+  overflow-x: hidden;
 }
 
 .libre-franklin-uniquifier {
@@ -21,10 +23,13 @@ body {
   font-variation-settings: "wdth" 100;
 }
 
+/* Ícone de voltar */
 .voltar {
-  width: 3%;
-  margin-top: 2%;
-  margin-left: 3%;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 40px;
+  height: auto;
   transition: 0.3s;
 }
 
@@ -37,18 +42,22 @@ body {
   transform: scale(1);
 }
 
+/* Capa Market Garden */
 .capaMarketGarden {
   background-image: url('../imagens/capaMarketGarden.png');
   background-repeat: no-repeat;
-  background-position: -20%;
-  background-size: 100%;
+  background-position: center;
+  background-size: cover;  /* alterado de 100% para cover */
   width: 100%;
-  height: auto;
-  align-items: center;
-  margin: auto;
-  justify-content: center;
-  align-content: center;
+  min-height: 50vh;
   border-bottom: solid 3px #ffca2b;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative; /* necessário para o ícone ficar fixo dentro */
 }
 
 .capaMarketGarden div {
@@ -61,7 +70,7 @@ body {
 
 .market {
   text-align: center;
-  font-size: 1000%;
+  font-size: 8vw;
   color: #ffca2b;
   font-weight: 900;
   font-family: "Libre Franklin", sans-serif;
@@ -70,7 +79,7 @@ body {
 
 .garden {
   text-align: center;
-  font-size: 800%;
+  font-size: 6vw;
   color: #ffffff00;
   font-weight: 900;
   margin-top: -20%;
@@ -85,36 +94,41 @@ body {
   margin: auto;
   padding-top: 10%;
   padding-bottom: 5%;
-  font-size: 400%;
+  font-size: 3vw;
   font-family: "Instrument Sans", sans-serif;
   color: #ffca2b;
 }
 
+/* Área Info Um */
 .areaInfoUm {
   display: flex;
   background-color: #ac8c2b;
   padding: 2.5%;
   width: 85%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
   gap: 3%;
   border-radius: 30px;
+  flex-wrap: nowrap;
 }
 
 .areaInfoUm p {
   color: #fff;
-  font-size: 160%;
-  width: 60%;
+  font-size: 1.6rem;
+  width: 55%;
   font-family: "Instrument Sans", sans-serif;
 }
 
 .areaInfoUm img {
-  width: 40%;
+  flex: 1 1 45%;
+  max-width: 550px;
   height: auto;
   border-radius: 20px;
+  object-fit: cover;
 }
 
+/* Área Info Dois */
 .areaInfoDois {
   border: solid 10px #ac8c2b;
   text-align: center;
@@ -128,7 +142,7 @@ body {
 }
 
 .areaInfoDois h1 {
-  font-size: 400%;
+  font-size: 2.5vw;
   font-family: "Instrument Sans", sans-serif;
   color: #d8af34;
   width: 50%;
@@ -138,14 +152,15 @@ body {
 
 .areaInfoDois p {
   color: #fff;
-  font-size: 160%;
+  font-size: 1.6rem;
   width: 60%;
   font-family: "Instrument Sans", sans-serif;
   margin: auto;
 }
 
+/* Consequências e Impacto */
 .consImpac {
-  font-size: 400%;
+  font-size: 3vw;
   width: 50%;
   text-align: center;
   font-family: "Instrument Sans", sans-serif;
@@ -155,30 +170,36 @@ body {
   color: #ffca2b;
 }
 
+/* Área Info Tres */
 .areaInfoTres {
   display: flex;
   width: 85%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
   gap: 3%;
   margin-top: 12%;
   margin-bottom: 9%;
+  flex-wrap: nowrap;
 }
 
 .areaInfoTres img {
-  width: 50%;
+  flex: 1 1 45%;
+  max-width: 550px;
   height: auto;
   border-radius: 30px;
+  object-fit: cover;
 }
 
 .areaInfoTres p {
+  flex: 1 1 55%;
   color: #fff;
-  font-size: 140%;
+  font-size: 1.4rem;
   font-family: "Instrument Sans", sans-serif;
   text-align: right;
 }
 
+/* Área de Imagens Extras */
 .areaImagens {
   display: flex;
   gap: 5%;
@@ -188,14 +209,18 @@ body {
   margin: auto;
   margin-top: 15%;
   margin-bottom: 5%;
+  flex-wrap: wrap;
 }
 
 .areaImagens img {
   width: 40%;
+  max-width: 550px;
   height: auto;
   border-radius: 30px;
+  object-fit: cover;
 }
 
+/* Fontes */
 .fontes {
   display: flex;
   padding-bottom: 2.5%;
@@ -203,16 +228,88 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   margin: auto;
 }
 
 .fontes h1 {
   color: #fff;
-  font-size: 150%;
+  font-size: 1.5rem;
   font-weight: 500;
   font-family: "Instrument Sans", sans-serif;
 }
 
 .fontes a {
   color: #fff;
+}
+
+/* ============================
+   Responsividade
+   ============================ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .market {
+    font-size: 10vw;
+  }
+
+  .garden {
+    font-size: 8vw;
+  }
+
+  .contextoObjetivo {
+    font-size: 5vw;
+  }
+
+  .areaInfoUm,
+  .areaInfoTres {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .areaInfoUm p,
+  .areaInfoTres p {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .areaInfoUm img,
+  .areaInfoTres img {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .voltar {
+    width: 35px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 600px) {
+  .market {
+    font-size: 12vw;
+  }
+
+  .garden {
+    font-size: 10vw;
+  }
+
+  .contextoObjetivo {
+    font-size: 6vw;
+  }
+
+  .areaInfoUm p,
+  .areaInfoDois p,
+  .areaInfoTres p {
+    font-size: 1rem;
+  }
+
+  .voltar {
+    width: 28px;
+  }
+
+  .areaImagens img {
+    width: 90%;
+  }
 }

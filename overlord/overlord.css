@@ -1,9 +1,9 @@
 body {
   background-color: #272222;
   background-image: url('../imagens/backGroundHumanas.png');
-  background-size: 100%;
-  margin: 0svb;
-  overflow: none;
+  background-size: cover;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 .libre-franklin-uniquifier {
@@ -21,10 +21,13 @@ body {
   font-variation-settings: "wdth" 100;
 }
 
+/* Ícone de voltar */
 .voltar {
-  width: 3%;
-  margin-top: 2%;
-  margin-left: 3%;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 40px;
+  height: auto;
   transition: 0.3s;
 }
 
@@ -37,41 +40,43 @@ body {
   transform: scale(1);
 }
 
+/* Capa Overlord */
 .capaOverlord {
   background-image: url('../imagens/capaOverlord.png');
   background-repeat: no-repeat;
-  background-position: -20%;
-  background-size: 100%;
+  background-position: center;
+  background-size: cover;
   width: 100%;
-  height: auto;
-  align-items: center;
-  margin: auto;
-  justify-content: center;
-  align-content: center;
+  min-height: 50vh;
   border-bottom: solid 3px #ac0000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative; /* necessário para o ícone ficar fixo dentro */
 }
 
 .titulo {
   text-align: center;
-  font-size: 1000%;
+  font-size: 8vw;
   color: #cf0e0e;
   font-weight: 900;
-  padding-top: 5.7%;
-  padding-bottom: 5.7%;
+  padding: 5% 0;
   -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: #680000;
   font-family: "Libre Franklin", sans-serif;
 }
 
-
-
+/* Título Overlord */
 .tituloOverlord {
   text-align: center;
   justify-content: center;
   margin: auto;
-  padding-top: 10%;
+  padding-top: 8%;
   padding-bottom: 5%;
-  font-size: 400%;
+  font-size: 3vw;
   font-family: "Instrument Sans", sans-serif;
   color: #FF7D04;
 }
@@ -84,65 +89,134 @@ body {
   color: #FFCA2B;
 }
 
-
-
+/* Primeira área de texto/imagem */
 .areaInfoUm {
   display: flex;
   background-color: #822f2f;
   padding: 2.5%;
   width: 85%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
   gap: 3%;
   border-radius: 30px;
+  flex-wrap: nowrap; /* mantém lado a lado no desktop */
 }
 
 .areaInfoUm p {
   color: #fff;
-  font-size: 140%;
+  font-size: 1.4rem;
   font-family: "Instrument Sans", sans-serif;
+  flex: 1 1 55%;   /* texto ocupa ~55% */
 }
 
 .areaInfoUm img {
-  width: 40%;
+  flex: 1 1 40%;   /* imagem ocupa ~40% */
+  max-width: 450px; /* limite de largura */
   height: auto;
   border-radius: 20px;
+  object-fit: cover;
 }
 
+/* Segunda área de texto/imagem */
 .areaInfoDois {
   display: flex;
   width: 85%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
   gap: 3%;
   margin-top: 12%;
   margin-bottom: 9%;
+  flex-wrap: nowrap;
 }
 
 .areaInfoDois img {
-  width: 50%;
+  flex: 1 1 50%;   /* imagem ocupa mais espaço agora */
+  max-width: 550px; /* limite maior que a de cima */
   height: auto;
   border-radius: 30px;
+  object-fit: cover;
 }
 
 .areaInfoDois p {
+  flex: 1 1 45%;   /* texto ocupa menos espaço */
   color: #fff;
-  font-size: 140%;
+  font-size: 1.4rem;
   font-family: "Instrument Sans", sans-serif;
   text-align: right;
 }
 
+/* Fonte */
 .fonte {
   text-align: center;
   margin-bottom: 3%;
   color: #fff;
-  font-size: 150%;
+  font-size: 1.2rem;
   font-weight: 500;
   font-family: "Instrument Sans", sans-serif;
 }
 
 .fonte a {
   color: #fff;
+}
+
+/* ============================
+   Responsividade
+   ============================ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .titulo {
+    font-size: 12vw;
+    -webkit-text-stroke-width: 3px;
+  }
+
+  .tituloOverlord {
+    font-size: 6vw;
+  }
+
+  .areaInfoUm,
+  .areaInfoDois {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .areaInfoUm p,
+  .areaInfoDois p {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .areaInfoUm img,
+  .areaInfoDois img {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .voltar {
+    width: 35px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 600px) {
+  .titulo {
+    font-size: 14vw;
+    -webkit-text-stroke-width: 2px;
+  }
+
+  .tituloOverlord {
+    font-size: 8vw;
+  }
+
+  .areaInfoUm p,
+  .areaInfoDois p {
+    font-size: 1rem;
+  }
+
+  .voltar {
+    width: 28px;
+  }
 }

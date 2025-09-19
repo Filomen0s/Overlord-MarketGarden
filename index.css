@@ -1,104 +1,135 @@
-body {
-    background-color: #272222;
-    background-image: url('../imagens/backGroundHumanas.png');
-    background-size: 100%;
-    margin: 0svb;
-    overflow: none;
+/* ===========================
+   index.css (RESPONSIVO AJUSTADO)
+   =========================== */
+
+/* 1) Variáveis e reset simples */
+:root{
+  --bg-color: #272222;
+  --accent: #DAD416;
+  --border-accent: #86821a;
+  --max-content-width: 1200px;
+  --card-radius: 20px;
+  --gap: 5%;
 }
 
+/* reset mínimo */
+* { box-sizing: border-box; }
+html,body { height: 100%; }
+body {
+    background-color: var(--bg-color);
+    background-image: url('../imagens/backGroundHumanas.png');
+    background-position: center top;
+    background-size: cover;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    color: #fff;
+}
+
+/* 2) Fontes - mantendo suas families */
 .libre-franklin-uniquifier {
     font-family: "Libre Franklin", sans-serif;
     font-optical-sizing: auto;
-    font-weight: weight;
+    font-weight: 400;
     font-style: normal;
 }
 
 .instrument-sans-uniquifier {
     font-family: "Instrument Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: weight;
+    font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
 }
 
+/* 3) Capa inicial */
 .capaEntrada {
     background-image: url('/imagens/capaEntrada.png');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-position: center;
+    background-size: cover;
     width: 100%;
-    height: auto;
+    min-height: 42vh;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-content: center;
-    border-bottom: solid 3px #86821a;
+    border-bottom: solid 3px var(--border-accent);
+    padding: 2rem 1rem;
 }
 
 .titulo {
-    padding-top: 15.03%;
-    padding-bottom: 15.03%;
+    margin: 0;
     text-align: center;
-    font-size: 500%;
-    color: #DAD416;
+    color: var(--accent);
     font-family: "Libre Franklin", sans-serif;
+    font-size: clamp(2.25rem, 6.5vw, 5rem);
+    line-height: 1;
+    padding: 6% 1rem;
 }
 
+/* 4) Área resumo */
 .areaSegGuerra {
-    border: solid 0px #fff;
     text-align: center;
-    margin-top: 8%;
-
+    margin-top: 5%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .tituloSegGuerra {
-    color: #DAD416;
-    font-size: 350%;
-    width: 40%;
-    border: solid 0px #fff;
+    color: var(--accent);
     font-family: "Instrument Sans", sans-serif;
-    align-content: center;
-    margin: auto;
+    font-size: clamp(1.5rem, 4.5vw, 3.5rem);
+    width: min(100%, 720px);
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
 }
 
 .textoSegGuerra {
     color: #fff;
     font-family: "Instrument Sans", sans-serif;
-    font-size: 130%;
-    width: 60%;
-    align-content: center;
-    padding-top: 5%;
-    margin: auto;
+    font-size: clamp(0.95rem, 1.8vw, 1.3rem);
+    width: min(100%, 900px);
+    padding-top: 1.25rem;
+    margin: 0 auto;
+    text-align: justify;
 }
 
+/* 5) Área com os cartões clicáveis */
 .areaIrPaginas {
     display: flex;
-    border: solid 0px #fff;
+    flex-wrap: nowrap;       /* mantém lado a lado */
     align-items: center;
     justify-content: center;
-    margin: auto;
-    gap: 5%;
-    margin-top: 8%;
-    margin-bottom: 6%;
+    gap: 4%;
+    margin: 3.5% auto;
+    padding: 1rem;
+    width: 100%;
+    max-width: var(--max-content-width);
+    padding-bottom: 6%;
 }
 
-.overlord {
-    background-image: url(/imagens/irParaOverlord.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 600px;
-    border: solid 0px #fff;
-    height: 330px;
-    border-radius: 20px;
-    transition: 0.3s;
-}
-
+.overlord,
 .marketGarden {
-    background-image: url(/imagens/irParaMarketGarden.png);
     background-repeat: no-repeat;
-    background-size: 100%;
-    width: 600px;
-    border: solid 0px #fff;
-    height: 330px;
-    border-radius: 20px;
-    transition: 0.3s;
+    background-position: center;
+    background-size: cover;
+    flex: 0 1 45%;           /* dois cards lado a lado */
+    max-width: 600px;
+    min-width: 280px;
+    aspect-ratio: 600 / 330; /* mantém proporção */
+    border: 0;
+    border-radius: var(--card-radius);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.overlord{
+    background-image: url('/imagens/irParaOverlord.png');
+}.marketGarden{
+    background-image: url('/imagens/irParaMarketGarden.png');
 }
 
 .overlord:hover,
@@ -110,4 +141,47 @@ body {
 .overlord:active,
 .marketGarden:active {
     transform: scale(1);
+}
+
+/* 6) Responsividade */
+@media (max-width: 760px) {
+  .areaIrPaginas {
+    flex-wrap: wrap;      /* empilha em telas pequenas */
+    gap: 2rem;
+  }
+  .overlord,
+  .marketGarden {
+    flex: 0 1 100%;
+    max-width: calc(100% - 2rem);
+    min-width: auto;
+  }
+  .textoSegGuerra {
+    text-align: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .overlord,
+  .marketGarden {
+    width: 100%;
+    aspect-ratio: 600 / 330;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1199px) {
+    .capaEntrada { min-height: 48vh; }
+}
+
+@media (min-width: 1200px) {
+    .capaEntrada { min-height: 55vh; }
+    .titulo { font-size: 5rem; padding-top: 10%; padding-bottom: 10%; }
+    .areaSegGuerra { margin-top: 6%; }
+}
+
+/* acessibilidade */
+.overlord, .marketGarden { outline: none; }
+.overlord:focus, .marketGarden:focus {
+  box-shadow: 0 0 0 4px rgba(218,212,22,0.18), 0 8px 20px rgba(0,0,0,0.4);
 }
