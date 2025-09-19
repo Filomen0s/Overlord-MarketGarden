@@ -1,5 +1,7 @@
 body {
   background-color: #272222;
+  background-image: url('../imagens/backGroundHumanas.png');
+  background-size: 100%;
   margin: 0svb;
   overflow: none;
 }
@@ -19,19 +21,19 @@ body {
   font-variation-settings: "wdth" 100;
 }
 
-.voltar{
+.voltar {
   width: 3%;
   margin-top: 2%;
   margin-left: 3%;
   transition: 0.3s;
 }
 
-.voltar:hover{
+.voltar:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
 
-.voltar:active{
+.voltar:active {
   transform: scale(1);
 }
 
@@ -49,12 +51,12 @@ body {
   border-bottom: solid 3px #ffca2b;
 }
 
-.capaMarketGarden div{
+.capaMarketGarden div {
   padding-top: 2.7%;
   padding-bottom: 2.7%;
- width: fit-content;
- height: fit-content;
- margin: auto;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
 }
 
 .market {
@@ -85,12 +87,12 @@ body {
   padding-bottom: 5%;
   font-size: 400%;
   font-family: "Instrument Sans", sans-serif;
-  color: #FF0000;
+  color: #ffca2b;
 }
 
 .areaInfoUm {
   display: flex;
-  background-color: #5E3737;
+  background-color: #ac8c2b;
   padding: 2.5%;
   width: 85%;
   align-items: center;
@@ -110,10 +112,11 @@ body {
 .areaInfoUm img {
   width: 40%;
   height: auto;
+  border-radius: 20px;
 }
 
 .areaInfoDois {
-  border: solid 10px #883B3B;
+  border: solid 10px #ac8c2b;
   text-align: center;
   width: 85%;
   align-items: center;
@@ -127,7 +130,7 @@ body {
 .areaInfoDois h1 {
   font-size: 400%;
   font-family: "Instrument Sans", sans-serif;
-  color: #842525;
+  color: #d8af34;
   width: 50%;
   margin: auto;
   padding-bottom: 4%;
@@ -149,7 +152,7 @@ body {
   justify-content: center;
   margin: auto;
   margin-top: 15%;
-  color: #FF0000;
+  color: #ffca2b;
 }
 
 .areaInfoTres {
@@ -203,7 +206,7 @@ body {
   margin: auto;
 }
 
-.fontes h1{
+.fontes h1 {
   color: #fff;
   font-size: 150%;
   font-weight: 500;

@@ -1,5 +1,7 @@
 body {
   background-color: #272222;
+  background-image: url('../imagens/backGroundHumanas.png');
+  background-size: 100%;
   margin: 0svb;
   overflow: none;
 }
@@ -19,19 +21,19 @@ body {
   font-variation-settings: "wdth" 100;
 }
 
-.voltar{
+.voltar {
   width: 3%;
   margin-top: 2%;
   margin-left: 3%;
   transition: 0.3s;
 }
 
-.voltar:hover{
+.voltar:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
 
-.voltar:active{
+.voltar:active {
   transform: scale(1);
 }
 
@@ -86,7 +88,7 @@ body {
 
 .areaInfoUm {
   display: flex;
-  background-color: #5E3737;
+  background-color: #822f2f;
   padding: 2.5%;
   width: 85%;
   align-items: center;
@@ -105,6 +107,7 @@ body {
 .areaInfoUm img {
   width: 40%;
   height: auto;
+  border-radius: 20px;
 }
 
 .areaInfoDois {

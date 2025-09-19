@@ -1,5 +1,7 @@
 body {
     background-color: #272222;
+    background-image: url('../imagens/backGroundHumanas.png');
+    background-size: 100%;
     margin: 0svb;
     overflow: none;
 }
@@ -99,11 +101,13 @@ body {
     transition: 0.3s;
 }
 
-.overlord:hover, .marketGarden:hover {
+.overlord:hover,
+.marketGarden:hover {
     cursor: pointer;
     transform: scale(1.03);
 }
 
-.overlord:active, .marketGarden:active {
+.overlord:active,
+.marketGarden:active {
     transform: scale(1);
 }
